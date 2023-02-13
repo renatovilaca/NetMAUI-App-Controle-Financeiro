@@ -8,9 +8,9 @@ namespace AppControleFinanceiro.Backend.Repositories
     {
         private readonly LiteDatabase _database;
         private readonly string _collectionName = "transactions";
-        public TransactionRepository()
+        public TransactionRepository(LiteDatabase database)
         {
-            var _database = new LiteDatabase("Filename=c:/temp/AppControleFinanceiro.db;Connection=Shared");
+            _database = database;
         }
 
         public List<Transaction> GetAll()
