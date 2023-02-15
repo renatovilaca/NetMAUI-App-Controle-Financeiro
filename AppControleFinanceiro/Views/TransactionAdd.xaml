@@ -7,8 +7,12 @@
     <VerticalStackLayout Spacing="5">
         <Border BackgroundColor="Black" Stroke="Transparent" Margin="15" Padding="15" StrokeShape="RoundRectangle 30">
             <Grid RowDefinitions="Auto" ColumnDefinitions="*, 30">
-                <Label Text="Novo" HorizontalOptions="Center" Grid.Row="0" Grid.Column="0" TextColor="White" />
-                <Label Text="X" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="1" TextColor="White" ></Label>
+                <Label Text="Novo" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" TextColor="White" FontSize="Subtitle" />
+                <Image Source="close.png" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="1" WidthRequest="17">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                 </Image>
             </Grid>
         </Border>
 
