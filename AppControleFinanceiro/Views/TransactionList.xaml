@@ -3,8 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppControleFinanceiro.Views.TransactionList"
              Title="TransactionList" NavigationPage.HasNavigationBar="False">
+    
+    <ContentPage.Resources>
+        <ResourceDictionary Source="/Resources/Styles/Colors.xaml"/>
+    </ContentPage.Resources>
+    
     <VerticalStackLayout>
-
 
         <Grid Padding="15" ColumnDefinitions="30, *, Auto">
             <Label Text="S" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Black" TextColor="White"/>
@@ -15,7 +19,6 @@
             <Label Grid.Column="2" Text="R$ 3.000,00" TextColor="{StaticResource Tertiary}" VerticalOptions="CenterAndExpand"/>
         </Grid>
         
-       
         <Label 
             Text="Transaction List"
             VerticalOptions="Center" 
@@ -35,7 +38,6 @@
                 <Label Text="R$ 840,00" Grid.Row="4" Grid.Column="1" TextColor="White" FontSize="14"/>
             </Grid>
         </Border>
-
 
     </VerticalStackLayout>
 </ContentPage>
