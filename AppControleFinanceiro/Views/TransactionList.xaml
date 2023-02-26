@@ -2,15 +2,40 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppControleFinanceiro.Views.TransactionList"
-             Title="TransactionList">
+             Title="TransactionList" NavigationPage.HasNavigationBar="False">
     <VerticalStackLayout>
+
+
+        <Grid Padding="15" ColumnDefinitions="30, *, Auto">
+            <Label Text="S" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Black" TextColor="White"/>
+            <VerticalStackLayout Grid.Column="1">
+                <Label Text="Salário"/>
+                <Label Text="10/10/2023" TextColor="#BABABA"/>
+            </VerticalStackLayout>
+            <Label Grid.Column="2" Text="R$ 3.000,00" TextColor="{StaticResource Tertiary}" VerticalOptions="CenterAndExpand"/>
+        </Grid>
+        
+       
         <Label 
             Text="Transaction List"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
 
-        <Button Text="Novo" Clicked="OnButtonClicked_To_TransactionAdd" />
-        <Button Text="Editar" Clicked="OnButtonClicked_To_TransactionEdit" />
+        <Button Text="Novo" Clicked="OnButtonClicked_To_TransactionAdd" Padding="15" Margin="10" />
+        <Button Text="Editar" Clicked="OnButtonClicked_To_TransactionEdit" Padding="15" Margin="10,0" />
+
+        <Border Margin="10" BackgroundColor="{StaticResource Black}" StrokeThickness="0" Padding="15" StrokeShape="RoundRectangle 20">
+            <Grid ColumnDefinitions="*, 80" RowDefinitions="Auto, Auto, 30, Auto, Auto">
+                <Label Text="Saldo" TextColor="Wheat" FontSize="16" Margin="5,0"/>
+                <Label Text="R$ 2.760,00" Grid.Row="1" TextColor="White" FontSize="36" Margin="5,0"/>
+                <Button Text="+" TextColor="Black" Grid.RowSpan="2" Grid.Column="1" Clicked="OnButtonClicked_To_TransactionAdd" HorizontalOptions="Center" FontSize="48" BackgroundColor="Yellow" HeightRequest="54" WidthRequest="54" CornerRadius="27" Padding="0"   />
+                <Label Text="Receitas" Grid.Row="3" TextColor="Wheat" FontSize="12" Margin="5,0"/>
+                <Label Text="R$ 3.600,00" Grid.Row="4" TextColor="White" FontSize="12" Margin="5,0"/>
+                <Label Text="Despesas" Grid.Row="3" Grid.Column="1" TextColor="Wheat" FontSize="12"/>
+                <Label Text="R$ 840,00" Grid.Row="4" Grid.Column="1" TextColor="White" FontSize="14"/>
+            </Grid>
+        </Border>
+
 
     </VerticalStackLayout>
 </ContentPage>
