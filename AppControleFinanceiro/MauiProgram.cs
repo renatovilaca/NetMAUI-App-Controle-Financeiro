@@ -1,6 +1,7 @@
 ﻿using AppControleFinanceiro.Backend;
 using AppControleFinanceiro.Backend.Repositories;
 using AppControleFinanceiro.Backend.Repositories.Interfaces;
+using AppControleFinanceiro.Views;
 using LiteDB;
 using Microsoft.Extensions.Logging;
 
@@ -18,7 +19,8 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			})
-			.RegisterDatabaseAndRepositories();
+			.RegisterDatabaseAndRepositories()
+			.RegisterViews();
 
 #if DEBUG
 		builder.Logging.AddDebug();
@@ -38,5 +40,15 @@ public static class MauiProgram
 		builder.Services.AddTransient<ITransactionRepository, TransactionRepository>();
 
 		return builder;
+    }
+
+    public static MauiAppBuilder RegisterViews(this MauiAppBuilder builder)
+    {
+
+        builder.Services.AddTransient<TransactionAdd>();
+        builder.Services.AddTransient<TransactionEdit>();
+        builder.Services.AddTransient<TransactionList>();
+
+        return builder;
     }
 }

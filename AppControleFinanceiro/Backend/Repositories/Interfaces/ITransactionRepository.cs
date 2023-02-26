@@ -2,7 +2,7 @@
 
 namespace AppControleFinanceiro.Backend.Repositories.Interfaces
 {
-    internal interface ITransactionRepository
+    public interface ITransactionRepository
     {
         List<Transaction> GetAll();
         Transaction GetById(int id);
