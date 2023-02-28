@@ -1,6 +1,6 @@
-using AppControleFinanceiro.Backend.Enums;
-using AppControleFinanceiro.Backend.Models;
-using AppControleFinanceiro.Backend.Repositories.Interfaces;
+using AppControleFinanceiro.Controller.Enums;
+using AppControleFinanceiro.Controller.Models;
+using AppControleFinanceiro.Controller.Repositories.Interfaces;
 using System.Text;
 
 namespace AppControleFinanceiro.Views;

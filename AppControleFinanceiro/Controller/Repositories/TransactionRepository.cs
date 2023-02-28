@@ -1,8 +1,8 @@
-﻿using AppControleFinanceiro.Backend.Models;
-using AppControleFinanceiro.Backend.Repositories.Interfaces;
+﻿using AppControleFinanceiro.Controller.Models;
+using AppControleFinanceiro.Controller.Repositories.Interfaces;
 using LiteDB;
 
-namespace AppControleFinanceiro.Backend.Repositories
+namespace AppControleFinanceiro.Controller.Repositories
 {
     internal class TransactionRepository : ITransactionRepository
     {

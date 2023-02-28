@@ -1,4 +1,4 @@
-﻿namespace AppControleFinanceiro.Backend.Enums
+﻿namespace AppControleFinanceiro.Controller.Enums
 {
     public enum TransactionType
     {

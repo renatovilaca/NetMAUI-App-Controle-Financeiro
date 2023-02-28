@@ -1,4 +1,4 @@
-﻿namespace AppControleFinanceiro.Backend
+﻿namespace AppControleFinanceiro.Controller
 {
     internal class AppSettings
     {

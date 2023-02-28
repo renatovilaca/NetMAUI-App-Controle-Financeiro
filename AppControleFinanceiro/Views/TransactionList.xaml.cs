@@ -1,4 +1,4 @@
-using AppControleFinanceiro.Backend.Repositories.Interfaces;
+using AppControleFinanceiro.Controller.Repositories.Interfaces;
 
 namespace AppControleFinanceiro.Views;
 

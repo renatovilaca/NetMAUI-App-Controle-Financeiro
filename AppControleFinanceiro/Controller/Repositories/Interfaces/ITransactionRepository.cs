@@ -1,6 +1,6 @@
-﻿using AppControleFinanceiro.Backend.Models;
+﻿using AppControleFinanceiro.Controller.Models;
 
-namespace AppControleFinanceiro.Backend.Repositories.Interfaces
+namespace AppControleFinanceiro.Controller.Repositories.Interfaces
 {
     public interface ITransactionRepository
     {

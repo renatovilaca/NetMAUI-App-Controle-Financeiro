@@ -1,6 +1,6 @@
-﻿using AppControleFinanceiro.Backend;
-using AppControleFinanceiro.Backend.Repositories;
-using AppControleFinanceiro.Backend.Repositories.Interfaces;
+﻿using AppControleFinanceiro.Controller;
+using AppControleFinanceiro.Controller.Repositories;
+using AppControleFinanceiro.Controller.Repositories.Interfaces;
 using AppControleFinanceiro.Views;
 using LiteDB;
 using Microsoft.Extensions.Logging;

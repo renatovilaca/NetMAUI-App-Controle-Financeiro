@@ -1,8 +1,8 @@
 ﻿
-using AppControleFinanceiro.Backend.Enums;
+using AppControleFinanceiro.Controller.Enums;
 using LiteDB;
 
-namespace AppControleFinanceiro.Backend.Models
+namespace AppControleFinanceiro.Controller.Models
 {
     public class Transaction
     {
