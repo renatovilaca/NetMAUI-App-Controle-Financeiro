@@ -24,13 +24,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-         
-        <!--<Label 
-            Text="Transaction List"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" /> -->
-
-        <Button Text="Novo" Clicked="OnButtonClicked_To_TransactionAdd" Padding="15" Margin="10" />
+        
         <Button Text="Editar" Clicked="OnButtonClicked_To_TransactionEdit" Padding="15" Margin="10,0" />
 
         <Border Margin="10" BackgroundColor="{StaticResource Black}" StrokeThickness="0" Padding="15" StrokeShape="RoundRectangle 20">
