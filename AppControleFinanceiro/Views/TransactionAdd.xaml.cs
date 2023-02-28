@@ -1,6 +1,7 @@
 using AppControleFinanceiro.Controller.Enums;
 using AppControleFinanceiro.Controller.Models;
 using AppControleFinanceiro.Controller.Repositories.Interfaces;
+using CommunityToolkit.Mvvm.Messaging;
 using System.Text;
 
 namespace AppControleFinanceiro.Views;
@@ -28,8 +29,10 @@ public partial class TransactionAdd : ContentPage
 
         Navigation.PopModalAsync();
 
+        WeakReferenceMessenger.Default.Send<string>(string.Empty);
+
         var countRecords = _repository.GetAll().Count;
-        App.Current.MainPage.DisplayAlert("Notificação!", $"Há {countRecords} registro(s) no BD!", "OK");
+        //App.Current.MainPage.DisplayAlert("Notificação!", $"Há {countRecords} registro(s) no BD!", "OK");
 
     }
 
