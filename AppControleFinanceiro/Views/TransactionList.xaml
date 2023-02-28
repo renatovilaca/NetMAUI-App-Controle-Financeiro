@@ -10,19 +10,25 @@
     
     <VerticalStackLayout>
 
-        <Grid Padding="15" ColumnDefinitions="30, *, Auto">
-            <Label Text="S" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Black" TextColor="White"/>
-            <VerticalStackLayout Grid.Column="1">
-                <Label Text="Salário"/>
-                <Label Text="10/10/2023" TextColor="#BABABA"/>
-            </VerticalStackLayout>
-            <Label Grid.Column="2" Text="R$ 3.000,00" TextColor="{StaticResource Tertiary}" VerticalOptions="CenterAndExpand"/>
-        </Grid>
-        
-        <Label 
+        <CollectionView x:Name="CollectionViewTransactions" >
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid Padding="15" ColumnDefinitions="30, *, Auto">
+                        <Label Text="S" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Black" TextColor="White"/>
+                        <VerticalStackLayout Grid.Column="1">
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" TextColor="#BABABA"/>
+                        </VerticalStackLayout>
+                        <Label Grid.Column="2" Text="{Binding Value, StringFormat='{0:C}'}" TextColor="{StaticResource Tertiary}" VerticalOptions="CenterAndExpand"/>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+         
+        <!--<Label 
             Text="Transaction List"
             VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+            HorizontalOptions="Center" /> -->
 
         <Button Text="Novo" Clicked="OnButtonClicked_To_TransactionAdd" Padding="15" Margin="10" />
         <Button Text="Editar" Clicked="OnButtonClicked_To_TransactionEdit" Padding="15" Margin="10,0" />
