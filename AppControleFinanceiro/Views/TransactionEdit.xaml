@@ -7,25 +7,27 @@
     <VerticalStackLayout Spacing="5">
         <Border BackgroundColor="Black" Stroke="Transparent" Margin="15" Padding="15" StrokeShape="RoundRectangle 30">
             <Grid RowDefinitions="Auto" ColumnDefinitions="*, 30">
-                <Label Text="Editar" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" TextColor="White" />
+                <Label Text="Editar" HorizontalOptions="Center" VerticalOptions="Center" Grid.Row="0" Grid.Column="0" TextColor="White"/>
                 <Image Source="close.png" HorizontalOptions="Center"  Grid.Row="0" Grid.Column="1" WidthRequest="17">
                     <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_ToClose"/>
                     </Image.GestureRecognizers>
                 </Image>
             </Grid>
         </Border>
 
+        <Label x:Name="LabelError" IsVisible="False" TextColor="Red" Margin="30,0"/>
+        
         <Grid ColumnDefinitions="*,*" Margin="30,0"  >
-            <RadioButton Grid.Column="0" IsChecked="True" Content="Receita" />
-            <RadioButton Grid.Column="1" Content="Despesa" HorizontalOptions="End" />
+            <RadioButton x:Name="RadioIncome" Grid.Column="0" IsChecked="True" Content="Receita" />
+            <RadioButton x:Name="RadioExpense" Grid.Column="1" Content="Despesa" HorizontalOptions="End" />
         </Grid>
 
-        <Entry Placeholder="Nome" Margin="15, 0"/>
-        <DatePicker Margin="15, 0"/>
-        <Entry Placeholder="Valor" Margin="15, 0"/>
+        <Entry x:Name="EntryName" Placeholder="Nome" Margin="15, 0"/>
+        <DatePicker x:Name="DatePickerDate" Margin="15, 0"/>
+        <Entry x:Name="EntryValue" Placeholder="Valor" Margin="15, 0"/>
 
-        <Button Text="Salvar" Margin="15, 10" HorizontalOptions="Center"/>
+        <Button Text="Salvar" Margin="15, 10" HorizontalOptions="Center" Clicked="OnButtonClicked_Save"/>
 
     </VerticalStackLayout>
     

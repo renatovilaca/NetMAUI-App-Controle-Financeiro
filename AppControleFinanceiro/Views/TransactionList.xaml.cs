@@ -1,4 +1,5 @@
 using AppControleFinanceiro.Controller.Enums;
+using AppControleFinanceiro.Controller.Models;
 using AppControleFinanceiro.Controller.Repositories.Interfaces;
 using CommunityToolkit.Mvvm.Messaging;
 
@@ -43,9 +44,15 @@ public partial class TransactionList : ContentPage
 		Navigation.PushModalAsync(transactionAdd);
 	}
 
-    private void OnButtonClicked_To_TransactionEdit(object sender, EventArgs e)
+    private void TapGestureRecognizer_To_TransactionEdit(object sender, TappedEventArgs e)
     {
+        var grid = (Grid)sender;
+        var gesture = (TapGestureRecognizer)grid.GestureRecognizers[0];
+
+        Transaction transaction = (Transaction)gesture.CommandParameter;
+
         var transactionEdit = Handler.MauiContext.Services.GetService<TransactionEdit>();
+        transactionEdit.SetTransactionToEdit(transaction);
         Navigation.PushModalAsync(transactionEdit);
     }
 }

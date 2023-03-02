@@ -15,7 +15,7 @@ public partial class TransactionAdd : ContentPage
         _repository = repository;
 	}
 
-    private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
+    private void TapGestureRecognizer_Tapped_ToClose(object sender, TappedEventArgs e)
     {
 		Navigation.PopModalAsync();
     }
@@ -31,7 +31,7 @@ public partial class TransactionAdd : ContentPage
 
         WeakReferenceMessenger.Default.Send<string>(string.Empty);
 
-        var countRecords = _repository.GetAll().Count;
+        //var countRecords = _repository.GetAll().Count;
         //App.Current.MainPage.DisplayAlert("Notificação!", $"Há {countRecords} registro(s) no BD!", "OK");
 
     }
