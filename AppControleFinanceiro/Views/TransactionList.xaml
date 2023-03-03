@@ -18,12 +18,17 @@
         <CollectionView x:Name="CollectionViewTransactions" >
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="15" ColumnDefinitions="30, *, Auto">
+                    <Grid Padding="15" ColumnDefinitions="40, *, Auto">
                         <Grid.GestureRecognizers>
                             <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="TapGestureRecognizer_To_TransactionEdit"/>
                         </Grid.GestureRecognizers>
-                        <Label Text="S" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Black" TextColor="White"/>
-                        <VerticalStackLayout Grid.Column="1">
+                        <Border WidthRequest="40" HeightRequest="40" BackgroundColor="Black" StrokeShape="RoundRectangle 20" Stroke="Transparent">
+                            <Border.GestureRecognizers>
+                                <TapGestureRecognizer CommandParameter="{Binding .}" Tapped="TapGestureRecognizer_To_TransactionDelete"/>
+                            </Border.GestureRecognizers>
+                            <Label Text="X" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" BackgroundColor="Black" TextColor="White" Padding="2" Margin="11,2" />
+                        </Border>
+                        <VerticalStackLayout Grid.Column="1" Margin="6,0">
                             <Label Text="{Binding Name}"/>
                             <Label Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}" TextColor="DimGray"/>
                         </VerticalStackLayout>
