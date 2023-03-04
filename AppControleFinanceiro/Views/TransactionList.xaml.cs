@@ -2,30 +2,29 @@ using AppControleFinanceiro.Controller.Enums;
 using AppControleFinanceiro.Controller.Models;
 using AppControleFinanceiro.Controller.Repositories.Interfaces;
 using CommunityToolkit.Mvvm.Messaging;
-using Microsoft.Maui.Controls;
 
 namespace AppControleFinanceiro.Views;
 
 public partial class TransactionList : ContentPage
 {
-	private ITransactionRepository _repository;
-	public TransactionList(ITransactionRepository repository)
-	{
-		this._repository = repository;
+    private ITransactionRepository _repository;
+    public TransactionList(ITransactionRepository repository)
+    {
+        this._repository = repository;
 
-		InitializeComponent();
+        InitializeComponent();
 
         RefreshTransactions();
 
-        WeakReferenceMessenger.Default.Register<string>(this, (e, msg) => 
-		{
+        WeakReferenceMessenger.Default.Register<string>(this, (e, msg) =>
+        {
             RefreshTransactions();
         }
         );
-	}
+    }
 
-	private void RefreshTransactions()
-	{
+    private void RefreshTransactions()
+    {
         var items = _repository.GetAll();
         CollectionViewTransactions.ItemsSource = items;
 
@@ -40,10 +39,10 @@ public partial class TransactionList : ContentPage
     }
 
     private void OnButtonClicked_To_TransactionAdd(object sender, EventArgs eventArgs)
-	{
+    {
         var transactionAdd = Handler.MauiContext.Services.GetService<TransactionAdd>();
-		Navigation.PushModalAsync(transactionAdd);
-	}
+        Navigation.PushModalAsync(transactionAdd);
+    }
 
     private void TapGestureRecognizer_To_TransactionEdit(object sender, TappedEventArgs e)
     {
@@ -60,7 +59,7 @@ public partial class TransactionList : ContentPage
     private async void TapGestureRecognizer_To_TransactionDelete(object sender, TappedEventArgs e)
     {
         await AnimationBorder((Border)sender, true);
-        bool result = await App.Current.MainPage.DisplayAlert("Excluir", "Tem certeza que deseja excluir?", "Sim", "Não");
+        bool result = await App.Current.MainPage.DisplayAlert("Excluir Lançamento", "Tem certeza que deseja excluir?", "Sim", "Não");
 
         if (result)
         {
