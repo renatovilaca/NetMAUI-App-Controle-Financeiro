@@ -1,4 +1,5 @@
 using AppControleFinanceiro.Controller.Enums;
+using AppControleFinanceiro.Controller.Helpers.Fixes;
 using AppControleFinanceiro.Controller.Models;
 using AppControleFinanceiro.Controller.Repositories.Interfaces;
 using CommunityToolkit.Mvvm.Messaging;
@@ -17,7 +18,8 @@ public partial class TransactionAdd : ContentPage
 
     private void TapGestureRecognizer_Tapped_ToClose(object sender, TappedEventArgs e)
     {
-		Navigation.PopModalAsync();
+        KeyboardFix.HideKeyboard();
+        Navigation.PopModalAsync();
     }
 
     private void OnButtonClicked_Save(object sender, EventArgs e)
@@ -27,6 +29,7 @@ public partial class TransactionAdd : ContentPage
 
         SaveTransactionInDatabase();
 
+        KeyboardFix.HideKeyboard();
         Navigation.PopModalAsync();
 
         WeakReferenceMessenger.Default.Send<string>(string.Empty);
